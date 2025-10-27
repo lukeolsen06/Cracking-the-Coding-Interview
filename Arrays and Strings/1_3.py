@@ -7,7 +7,7 @@
 # Optimized: Determine the difference between input string length (with the trailing spaces) and the true string length. Then, divide the difference by 2 because we have two extra characters in '%20' for each space character ' '
 # This will also be O(n) time but adds condition to see if we already have seen all the spaces in the true string. Drastically improves run time on extreme cases where there a few spaces in the beginning and a long run of no spaces at the backend of the string.
 
-#Assumption: Trailing spaces are not counted in the true length of the string.
+# Key assumption for this implementation: Trailing spaces are not counted in the true length of the string. Important question to ask
 def URLify(string, length):
     if (length == 0):
         return 0
@@ -58,4 +58,4 @@ def URLify_2(string, length):
 print(URLify("Doctor J  ", 8))        # Doctor%20J
 print(URLify("Mr John Smith    ", 13))  # Mr%20John%20Smith
 print(URLify(" Basketball  ", 11))       # %20Basketball
-print(URLify(" John  ", 5))              # %20John         # %20John 
+print(URLify(" John  ", 5))              # %20John     
