@@ -2,12 +2,10 @@
 # Question 1.3 - URLify
 # Write a method to replace all spaces in a string with a '%20'. You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given the 'true' length of the string
 
-# BF: Iterate through the entire string and replace each space with '%20'. Runs in O(length) time because it checks every character up until the true length of the string
+# BF: Iterate through the entire string and replace each space with '%20'. Runs in O(n) 
 
 # Optimized: Determine the difference between input string length (with the trailing spaces) and the true string length. Then, divide the difference by 2 because we have two extra characters in '%20' for each space character ' '
-# This will also be O(n) time but adds condition to see if we already have seen all the spaces in the true string. Drastically improves run time on extreme cases where there a few spaces in the beginning and a long run of no spaces at the backend of the string.
-
-# Key assumption for this implementation: Trailing spaces are not counted in the true length of the string. Important question to ask
+# This will also be O(n) time but adds condition to see if we already have seen all the spaces in the true string. Improves run time on extreme cases where there a few spaces in the beginning and a long run of no spaces at the backend of the string.
 def URLify(string, length):
     if (length == 0):
         return 0
@@ -23,7 +21,6 @@ def URLify(string, length):
 
 
 # Book solution (pg 195). This is the traditional in-place solution that works backwards and modifies the string (list) in place. O(n) runtime, O(n) space
-# Avoids assumption of trailing spaces not being counted in the true length of the string.
 def URLify_2(string, length):
     """URLify working backwards from the end - the classic in-place solution."""
     chars = list(string)
@@ -58,4 +55,5 @@ def URLify_2(string, length):
 print(URLify("Doctor J  ", 8))        # Doctor%20J
 print(URLify("Mr John Smith    ", 13))  # Mr%20John%20Smith
 print(URLify(" Basketball  ", 11))       # %20Basketball
-print(URLify(" John  ", 5))              # %20John     
+print(URLify(" John  ", 5))              # %20John   
+print(URLify("Jake Smith        ", 12))  # Jake%20Smith%20%20
