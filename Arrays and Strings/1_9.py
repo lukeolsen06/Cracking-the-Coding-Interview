@@ -15,5 +15,5 @@ def string_rotation(s1, s2):
 def isSubstring(s1, s2):
     return s2 in s1
 
-print(string_rotation("waterbottle", "erbottlewat"))
-print(string_rotation("evermore", "ermoreev"))
+print(string_rotation("waterbottle", "erbottlewat")) # True
+print(string_rotation("evermore", "ermoreev"))       # True
