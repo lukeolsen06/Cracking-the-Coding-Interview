@@ -26,7 +26,7 @@ list = LinkedList()
 chars = "Two roads diverged in a yellow wood"
 for char in chars:
     list.append(char)
-print(f"m should be the output: {kth_element(list.head, 18)}") # d
+print(f"d should be the output: {kth_element(list.head, 18)}") # d
 print(f"The 2nd to last element is: {kth_element(list.head, 2)}") # o
 print(f"The first letter in this sentence is: {kth_element(list.head, 35)}") # T
 
